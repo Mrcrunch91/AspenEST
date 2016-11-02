@@ -1,2 +1,2 @@
 # AspenEST
-Financial calculator
+Financial calculator that calculates and displays monthly payments, total amount paid,total interest paid,etc...
