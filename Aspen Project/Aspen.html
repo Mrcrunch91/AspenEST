@@ -1,0 +1,37 @@
+	<!DOCTYPE html>
+
+	<html lang = "en">
+	<meta charset = "utf-8"/>
+	<head>
+		<script src="AspenB.js" type="text/javascript"></script>
+	<title> Aspen Finance Calculator</title>	
+	</head>
+
+	<body>
+
+		<form name = "getVals" action = "javascript:calc();"  >
+
+			<label>Months:</label>
+		<p>
+		 <input type = "radio" name = "selectLen" value = "24"> 24 Months<br>
+		 <input type = "radio" name = "selectLen" value = "36" checked > 36 Months<br>
+		 <input type = "radio" name = "selectLen" value = "48"> 48 Months<br>
+		 <input type = "radio" name = "selectLen" value = "60"> 60 Months<br>
+		 <input type = "radio" name = "selectLen" value = "72"> 72 Months
+		</p>
+
+
+
+		<p><input type ="number" id = "loan" step = "any" placeholder = "Enter Loan Amount" required/></p>
+		<p><input type = "number" id = "downpayment"  step = "any"  placeholder = "Enter Down-Payment Amount" required/></p>
+		<p><input type = "number" id = "tradeIn" step = "any"  placeholder = "Enter Trade-In Value" required/></p>
+		<p><input type = "number" id = "rebates" step = "any"  placeholder = "Enter Rebates Amount" required/></p>
+		<p><input type = "number" id = "interestRate" step = "any"  placeholder = "Enter Interest Rate" required/></p>		
+		
+
+		</br><input type = "submit" value = "Calculate"/>
+
+	</form>
+	</body>
+	 
+	</html>
