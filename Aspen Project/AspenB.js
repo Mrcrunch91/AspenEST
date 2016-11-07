@@ -10,14 +10,11 @@ loan_time["72"] = 72;
 var total_Principal = 0;
 var total_Interest = 0; 
 
-function calc(){
-	alert("in function");
+function calc(){	
 
-while(document.getElementById("createTable") != null){
-	var removeTable = document.getElementById("createTable");
-	theDiv.removeChild(removeTable);	
+while(document.getElementById("createTable")){		
+		firstDiv.removeChild(document.getElementById("createTable"));	
 }
-
 
 var loan = document.getElementById("loan").value;
 var d_pay = document.getElementById("downpayment").value;
@@ -32,13 +29,17 @@ rebates = parseFloat(rebates);
 interest_Rate = parseFloat(interest_Rate);
 interest_Rate = interest_Rate.toFixed(3);
 
-var theDiv = document.getElementById("firstDiv");
+
+
+
+getfinalPrincipal(loan,d_pay,tradeIn,rebates);
 
 var doos = loanLen();
-getfinalPrincipal(loan,d_pay,tradeIn,rebates);
 var monthPay = monthlyPayment(total_Principal,doos,interest_Rate);
 paidTotalInterest(monthPay,doos);
-getTable(monthPay);
+
+getTable(monthPay,doos);
+
 }
 
 function loanLen(){	
@@ -74,7 +75,7 @@ function paidTotalInterest(monthPay,doos){
 	total_Interest = ((monthPay*doos) - total_Principal).toFixed(2);	
 }
 
-function getTable(monthPay){
+function getTable(monthPay,doos){	
 
 	var createTable = document.createElement("table");
 	createTable.id = "createTable";
@@ -105,14 +106,11 @@ function getTable(monthPay){
 
 	cell0.innerHTML = "$ " + total_Principal;
 	cell1.innerHTML = "$ " + total_Interest;
-	cell2.innerHTML = "$" + monthPay;
+	cell2.innerHTML = "$" + monthPay + " for " + doos + " payments";
 }
 
-function clearTable(){
-	if(document.getElementById("createTable")){
-		var removeTable = document.getElementById("createTable");
-		theDiv.removeChild(removeTable);
-	}
+function clearTable(){		
+		firstDiv.removeChild(document.getElementById("createTable"));
 }
 
 
