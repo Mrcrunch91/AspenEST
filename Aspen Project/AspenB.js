@@ -1,3 +1,5 @@
+var theDiv = document.getElementById("firstDiv");
+
 var loan_time = new Array();
 loan_time["24"] = 24;
 loan_time["36"] = 36;
@@ -9,11 +11,20 @@ var total_Principal = 0;
 var total_Interest = 0; 
 
 function calc(){
+	alert("in function");
+
+while(document.getElementById("createTable") != null){
+	var removeTable = document.getElementById("createTable");
+	theDiv.removeChild(removeTable);	
+}
+
+
 var loan = document.getElementById("loan").value;
 var d_pay = document.getElementById("downpayment").value;
 var tradeIn = document.getElementById("tradeIn").value;
 var rebates = document.getElementById("rebates").value;
 var interest_Rate = document.getElementById("interestRate").value;
+
 loan = parseFloat(loan);
 d_pay = parseFloat(d_pay);
 tradeIn = parseFloat(tradeIn);
@@ -21,11 +32,13 @@ rebates = parseFloat(rebates);
 interest_Rate = parseFloat(interest_Rate);
 interest_Rate = interest_Rate.toFixed(3);
 
+var theDiv = document.getElementById("firstDiv");
+
 var doos = loanLen();
 getfinalPrincipal(loan,d_pay,tradeIn,rebates);
 var monthPay = monthlyPayment(total_Principal,doos,interest_Rate);
-var theCompleteInterest = paidTotalInterest(monthPay,doos);
-alert(theCompleteInterest);
+paidTotalInterest(monthPay,doos);
+getTable(monthPay);
 }
 
 function loanLen(){	
@@ -58,8 +71,49 @@ function monthlyPayment(total_Principal,doos,interest_Rate){
 }
 
 function paidTotalInterest(monthPay,doos){
-	var loanInterest = (monthPay*doos) - total_Principal;
-
-	return loanInterest.toFixed(2);
+	total_Interest = ((monthPay*doos) - total_Principal).toFixed(2);	
 }
+
+function getTable(monthPay){
+
+	var createTable = document.createElement("table");
+	createTable.id = "createTable";
+	firstDiv.appendChild(createTable);
+
+	var resultHead = createTable.createTHead();
+	var headRow = resultHead.insertRow();
+
+	var headercell0 = document.createElement("th");
+	var headercell1 = document.createElement("th");
+	var headercell2 = document.createElement("th");
+
+	headercell0.innerHTML = "Total Principle";
+	headRow.appendChild(headercell0);
+
+	headercell1.innerHTML = "Total Interest";
+	headRow.appendChild(headercell1);
+
+	headercell2.innerHTML = "Monthly Payments";
+	headRow.appendChild(headercell2);
+
+	var resultTable = document.getElementById("createTable");
+	var tableRow = resultTable.insertRow(1);
+
+	var cell0 = tableRow.insertCell(0);
+	var cell1 = tableRow.insertCell(1);
+	var cell2 = tableRow.insertCell(2);
+
+	cell0.innerHTML = "$ " + total_Principal;
+	cell1.innerHTML = "$ " + total_Interest;
+	cell2.innerHTML = "$" + monthPay;
+}
+
+function clearTable(){
+	if(document.getElementById("createTable")){
+		var removeTable = document.getElementById("createTable");
+		theDiv.removeChild(removeTable);
+	}
+}
+
+
 
