@@ -1,4 +1,4 @@
-var theDiv = document.getElementById("firstDiv");
+//var theDiv = document.getElementById("firstDiv");
 
 var loan_time = new Array();
 loan_time["24"] = 24;
@@ -63,6 +63,10 @@ function getfinalPrincipal(loan,downpay,trade,rebate){
 }
 
 function monthlyPayment(total_Principal,doos,interest_Rate){
+
+	if(interest_Rate == 0 || interest_Rate < 0){
+		return (total_Principal/doos).toFixed(2);
+	}
 	var i = (interest_Rate/12)/100;
 	var topFum =  i * Math.pow((1+i),doos);
 	var bottomFum = Math.pow((1+i),doos) - 1;
@@ -104,9 +108,14 @@ function getTable(monthPay,doos){
 	var cell1 = tableRow.insertCell(1);
 	var cell2 = tableRow.insertCell(2);
 
+	if(total_Interest<0){
+		total_Interest = 0.00;		
+	}
+
+
 	cell0.innerHTML = "$ " + total_Principal;
 	cell1.innerHTML = "$ " + total_Interest;
-	cell2.innerHTML = "$" + monthPay + " for " + doos + " payments";
+	cell2.innerHTML = "$" + monthPay + "/" + doos + " payments";
 }
 
 function clearTable(){		
