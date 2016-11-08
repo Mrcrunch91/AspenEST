@@ -2,11 +2,12 @@ body{
 	background-color: #b3ccff;
 	text-align: center;
 	overflow-x: hidden;
+	height: 50%;
 }
 
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+    -webkit-appearance: none;    
     margin: 0;
 }
 
@@ -14,3 +15,32 @@ input[type=number] {
     -moz-appearance:textfield;
 }
 
+header{
+	font-size: 20pt;
+	color: blue;
+	font-family: georgia;
+	padding-top: 25px;
+	text-align: center;
+
+}
+
+#firstDiv{
+	vertical-align: middle;
+	width: 80%;
+	margin-left: 10%;
+	background-color: white;
+	text-align: center;
+	
+}
+ 
+ #car-main{
+	background-image: url("AspenWaterfall.jpg");
+	background-repeat: no-repeat;
+	height:200px;
+	padding-top: 20%;	
+	background-size: 100% 100%;
+ }
+
+ #createTable{
+ 	text-align: center;
+ }
