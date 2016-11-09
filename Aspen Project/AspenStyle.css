@@ -1,46 +1,128 @@
 body{
-	background-color: #b3ccff;
+	background-color: white;
 	text-align: center;
-	overflow-x: hidden;
-	height: 50%;
+	overflow-x: hidden;	
 }
 
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;    
-    margin: 0;
+    margin: 0;    
 }
 
 input[type=number] {
     -moz-appearance:textfield;
+     border-style: solid;
+	 border-width: 2px;
+	 padding: 8px;
+	 width: 20%;
+
+
+}
+
+ p label{
+	display: inline-block;
+	width:100px;
+	padding:10px;
+	text-align: center;
+}
+ p input{	
+	width:100px;
+	text-align: center;
+}
+
+.boom{
+	position: relative;
+	left: 60px;
+
+}
+
+.goom{
+	position:relative;
+	right: 50px;
+}
+
+.zoom{
+	position:relative;
+	left: 45px;
 }
 
 header{
 	font-size: 20pt;
-	color: blue;
-	font-family: georgia;
-	padding-top: 25px;
-	text-align: center;
-
+	color: white;
+	font-family: georgia;	
+	position: top;
 }
 
 #firstDiv{
+
 	vertical-align: middle;
 	width: 80%;
 	margin-left: 10%;
 	background-color: white;
-	text-align: center;
-	
+	text-align: center;		
+	padding-bottom: 20px;	
+	}
+
+table{		
+		text-align: center;
+		position: relative;
+		left: 450px;          
+        margin-top: 2.5%;
+        margin-bottom: 2.5%;
+      }
+td,th{
+		border-style: solid;
+		border-width: 1px;
+		padding: 8px;		
 }
+
  
  #car-main{
-	background-image: url("AspenWaterfall.jpg");
+	background-image: url("Aspen-header.jpg");
 	background-repeat: no-repeat;
-	height:200px;
+	height:50px;
 	padding-top: 20%;	
 	background-size: 100% 100%;
  }
 
- #createTable{
- 	text-align: center;
- }
+footer{
+	text-align: center;
+	color: #8080ff;
+}
+
+.container label {
+  position: relative;
+}
+
+.container span::before,
+.container span::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.container span.radio:hover {
+  cursor: pointer;
+}
+.container span.radio::before {
+  left: -52px;
+  width: 45px;
+  height: 25px;
+  background-color: #A8AAC1;
+  border-radius: 50px;
+}
+.container span.radio::after {
+  left: -49px;
+  width: 17px;
+  height: 17px;
+  border-radius: 10px;
+  background-color: #6C788A;
+  transition: left .25s, background-color .25s;
+}
+input[type="radio"]:checked + label span.radio::after {
+  left: -27px;
+  background-color: #EBFF43;
+}
