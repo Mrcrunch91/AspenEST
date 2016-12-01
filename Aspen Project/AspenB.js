@@ -1,5 +1,3 @@
-//var theDiv = document.getElementById("firstDiv");
-
 var loan_time = new Array();
 loan_time["24"] = 24;
 loan_time["36"] = 36;
