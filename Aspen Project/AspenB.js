@@ -1,4 +1,10 @@
+/*
+Creator: Nathaniel McPhee
+Parent Application: AspenEST
+*/
+
 var loan_time = new Array();
+
 loan_time["24"] = 24;
 loan_time["36"] = 36;
 loan_time["48"] = 48;
@@ -8,9 +14,10 @@ loan_time["72"] = 72;
 var total_Principal = 0;
 var total_Interest = 0; 
 
+//Main function to begin generating data form user input.
 function calc(){	
 
-//Clears table to new data.
+//Clears table for new data.
 while(document.getElementById("createTable")){		
 		firstDiv.removeChild(document.getElementById("createTable"));	
 }
