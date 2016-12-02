@@ -2,6 +2,7 @@ body{
 	background-color: white;
 	text-align: center;
 	overflow-x: hidden;	
+	background-image: url("True-Mountain.jpg");
 }
 
 input[type=number]::-webkit-outer-spin-button,
@@ -49,17 +50,18 @@ input[type=number] {
 
 header{
 	font-size: 20pt;
-	color: #66b3ff;
+	color: white;
 	font-family: georgia;	
 	position: top;
 }
 
 #firstDiv{
-
+	margin-top: 5%;
+	height: 110%;
 	vertical-align: middle;
 	width: 80%;
 	margin-left: 10%;
-	background-color: white;
+	background-color: white,0.3;
 	text-align: center;		
 	padding-bottom: 20px;	
 	}
@@ -79,53 +81,36 @@ td,th{
 }
 
  
- #car-main{
-	background-image: url("True-Mountain.jpg");
+ #car-main{	
 	background-repeat: no-repeat;
 	height:50px;
 	padding-top: 20%;	
 	background-size: 100% 100%;
 	width: 100%;
-
  }
 
 footer{
 	text-align: center;
-	color: #8080ff;
+	color: white;
 }
 
-.container label {
-  position: relative;
+footer a{
+	color: red;
 }
 
-.container span::before,
-.container span::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto;
+input[type = "submit"]{
+	background-color: white;
+
 }
 
-.container span.radio:hover {
-  cursor: pointer;
+input[type = "reset"]{
+	background-color: white;
+
 }
-.container span.radio::before {
-  left: -52px;
-  width: 45px;
-  height: 25px;
-  background-color: #A8AAC1;
-  border-radius: 50px;
+
+#createTable{
+	color:#6666ff;		
+	margin-left: -10%;
+	background-color: #cccccc;
 }
-.container span.radio::after {
-  left: -49px;
-  width: 17px;
-  height: 17px;
-  border-radius: 10px;
-  background-color: #6C788A;
-  transition: left .25s, background-color .25s;
-}
-input[type="radio"]:checked + label span.radio::after {
-  left: -27px;
-  background-color: #EBFF43;
-}
+
