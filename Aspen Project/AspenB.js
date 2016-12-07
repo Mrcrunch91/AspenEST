@@ -19,7 +19,7 @@ function calc(){
 
 //Clears table for new data.
 while(document.getElementById("createTable")){		
-		firstDiv.removeChild(document.getElementById("createTable"));	
+	firstDiv.removeChild(document.getElementById("createTable"));	
 }
 
 var loan = document.getElementById("loan").value;
@@ -58,18 +58,18 @@ function loanLen(){
 	var selectItemLen = theForm.elements["selectLen"]; 
 
     //Select radio value
-	for(var i = 0; i<selectItemLen.length;i++){
-		if(selectItemLen[i].checked){	
-			loanDur = loan_time[selectItemLen[i].value];
-			break;
-		}
-	}	
-	return loanDur;
+    for(var i = 0; i<selectItemLen.length;i++){
+    	if(selectItemLen[i].checked){	
+    		loanDur = loan_time[selectItemLen[i].value];
+    		break;
+    	}
+    }	
+    return loanDur;
 }
 
 //Calculates total principal for user after various subtractions.
 function getfinalPrincipal(loan,downpay,trade,rebate){
-	 total_Principal = (loan - downpay - trade - rebate);
+	total_Principal = (loan - downpay - trade - rebate);
 	return;
 }
 
@@ -136,7 +136,7 @@ function getTable(monthPay,doos){
 
 //Removes the table upon screen refresh or data reset. 
 function clearTable(){		
-		firstDiv.removeChild(document.getElementById("createTable"));
+	firstDiv.removeChild(document.getElementById("createTable"));
 }
 
 

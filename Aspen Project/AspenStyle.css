@@ -110,7 +110,8 @@ input[type = "reset"]{
 
 #createTable{
 	color:#6666ff;		
-	margin-left: -10%;
-	background-color: #cccccc;
+	margin-left:0;
+	background-color: #d9d9d9;
+	position:middle;
 }
 
