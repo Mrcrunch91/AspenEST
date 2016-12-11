@@ -98,7 +98,7 @@ function getTable(monthPay,doos){
 	//creates a table element and added it to the div "first" in the html
 	var createTable = document.createElement("table");
 	createTable.id = "createTable";
-	firstDiv.appendChild(createTable);
+	dataTable.appendChild(createTable);
 
 	var resultHead = createTable.createTHead();
 	var headRow = resultHead.insertRow();
