@@ -33,9 +33,7 @@ input[type=number] {
 }
 
 .boom{
-	position: relative;
-
-
+	position:relative;
 }
 
 .goom{
@@ -44,7 +42,8 @@ input[type=number] {
 }
 
 .zoom{
-	position:relative;
+	position:fixed;
+	margin-left: 37%;
 	
 }
 
