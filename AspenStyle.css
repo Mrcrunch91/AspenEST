@@ -23,9 +23,10 @@ input[type=number] {
 
 p label{
 	display: inline-block;
-	width:100px;
-	padding:10px;
+	width:15%;
+	padding-right:0em;
 	text-align: right;
+	font-size: 1.5em;
 }
 p input{	
 	width:200px;
@@ -61,7 +62,7 @@ td,th{
 
 input[type = "submit"]{
 	background-color: white;	
-	margin-left: 8%;
+	margin-left: 15.1%;
 }
 
 input[type = "reset"]{
@@ -96,7 +97,7 @@ form {
  }
 
  #aligns{
- 	margin-right: 4%;
+ 	margin-right: 10%;
  }
 
 
