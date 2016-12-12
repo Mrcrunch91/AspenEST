@@ -98,7 +98,7 @@ function getTable(monthPay,doos){
 	//creates a table element and added it to the div "first" in the html
 	var createTable = document.createElement("table");
 	createTable.id = "createTable";
-	dataTable.appendChild(createTable);
+	center.appendChild(createTable);
 
 	var resultHead = createTable.createTHead();
 	var headRow = resultHead.insertRow();
@@ -136,7 +136,7 @@ function getTable(monthPay,doos){
 
 //Removes the table upon screen refresh or data reset. 
 function clearTable(){		
-	firstDiv.removeChild(document.getElementById("createTable"));
+	center.removeChild(document.getElementById("createTable"));
 }
 
 
