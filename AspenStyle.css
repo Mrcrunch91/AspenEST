@@ -71,7 +71,7 @@ input[type = "reset"]{
 }
 
 input[type = "radio"]{
-	margin-left: 4%;
+	
 
 }
 
@@ -98,6 +98,11 @@ form {
 
  #aligns{
  	margin-right: 10%;
+ }
+
+ #monthsTime{
+ 	margin-left: 14%;
+ 	margin-bottom: 2.5%;
  }
 
 
