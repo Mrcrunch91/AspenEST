@@ -27,9 +27,10 @@ p label{
 	padding-right:0em;
 	text-align: right;
 	font-size: 1.5em;
+	color:black;
 }
 p input{	
-	width:200px;
+	width:15%;
 	text-align: center;
 }
 
@@ -61,12 +62,16 @@ td,th{
 }
 
 input[type = "submit"]{
-	background-color: white;	
+	width: 7%;
+	background-color: #737373;	
 	margin-left: 15.1%;
+	color:#0000ff;
 }
 
 input[type = "reset"]{
-	background-color: white;
+	width: 7%;
+	background-color: #737373;
+	color:#0000ff;
 
 }
 
@@ -92,8 +97,7 @@ form {
 }
  
  #center{
- 	width:100%;
- 	
+ 	width:100%; 	
  }
 
  #aligns{
