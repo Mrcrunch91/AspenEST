@@ -129,7 +129,7 @@ function getTable(monthPay,doos){
 		total_Interest = 0.00;		
 	}
 
-	cell0.innerHTML = "$ " + total_Principal;
+	cell0.innerHTML = "$ " + total_Principal.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
 	cell1.innerHTML = "$ " + total_Interest;
 	cell2.innerHTML = "$" + monthPay + "/" + doos + " payments";
 }
