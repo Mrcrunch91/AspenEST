@@ -19,7 +19,7 @@ function calc(){
 
 //Clears table for new data.
 while(document.getElementById("createTable")){		
-	firstDiv.removeChild(document.getElementById("createTable"));	
+	center.removeChild(document.getElementById("createTable"));	
 }
 
 var loan = document.getElementById("loan").value;
