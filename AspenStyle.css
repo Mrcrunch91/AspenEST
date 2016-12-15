@@ -39,7 +39,7 @@ header{
 	position: top;
 	text-align: center;
 	margin-bottom: 2.5%;
-	margin-left: 4%;
+	margin-left: 2.5%;
 }
 
 td,th{
@@ -90,7 +90,7 @@ table {
 	margin-bottom: 2.5%;
 	margin-top: 2.5%;
 	width:70%;
-	margin-left: 23%;	
+	margin-left: 20%;	
 	text-align: center;
 	border-spacing: 0;			
 }
@@ -112,7 +112,7 @@ form {
 
 
  #monthsTime{
- 	margin-left: 18%;
+ 	margin-left: 12%;
  	margin-bottom: 2.5%;
  	padding-top: 1%;
  }
