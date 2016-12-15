@@ -90,9 +90,10 @@ table {
 	margin-bottom: 2.5%;
 	margin-top: 2.5%;
 	width:70%;
-	margin-left: 20%;	
+	margin-left: 22%;	
 	text-align: center;
 	border-spacing: 0;			
+	border: 2px solid black;
 }
 
 form {
