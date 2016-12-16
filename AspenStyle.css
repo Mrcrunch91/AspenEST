@@ -49,12 +49,12 @@ td,th{
 }
 
 
-#theFooter p{	
+#theFooter p a{	
 	color:red; 
 	position:absolute;
 	bottom:0px;
 	width:100%;
-	height:2%; 
+	height:3%; 
 	text-align: center;	
 }
 
