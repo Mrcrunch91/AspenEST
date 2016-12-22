@@ -131,7 +131,7 @@ function getTable(monthPay,doos){
 
 	cell0.innerHTML = "$ " + total_Principal.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
 	cell1.innerHTML = "$ " + total_Interest.replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
-	cell2.innerHTML = "$" + monthPay.replace(/(\d)(?=(\d{3})+\.)/g, '$1,'); + "/" + doos + " payments";
+	cell2.innerHTML = "$" + monthPay.replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + "/" + doos + " payments";
 }
 
 //Removes the table upon screen refresh or data reset. 
