@@ -57,6 +57,7 @@ td,th{
 	height:3%; 
 	text-align: center;	
 	margin-left: 2.5%;
+	text-decoration: none;
 }
 
 input[type = "submit"]{

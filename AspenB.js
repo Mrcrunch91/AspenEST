@@ -4,6 +4,7 @@ Parent Application: AspenEST
 */
 
 var loan_time = new Array();
+var theDate = new Date();
 
 loan_time["24"] = 24;
 loan_time["36"] = 36;
@@ -13,6 +14,9 @@ loan_time["72"] = 72;
 
 var total_Principal = 0;
 var total_Interest = 0; 
+
+var theTrademark = ("&copy; " + " " + theDate.getFullYear() + " Aspen Corp. All Rights Reserved.");
+document.getElementById("bottomTrademark").innerHTML = theTrademark;
 
 //Main function to begin generating data form user input.
 function calc(){	
@@ -45,7 +49,6 @@ var monthPay = monthlyPayment(total_Principal,doos,interest_Rate);
 paidTotalInterest(monthPay,doos);
 
 getTable(monthPay,doos);
-
 }
 
 //Gets loan duration from user
