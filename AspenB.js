@@ -139,7 +139,38 @@ function getTable(monthPay,doos){
 
 //Removes the table upon screen refresh or data reset. 
 function clearTable(){		
-	center.removeChild(document.getElementById("createTable"));
+	center.removeChild(document.getElementById("getGraph"));
+}
+
+
+window.onload = function () {
+	var chart = new CanvasJS.Chart("createTable",
+	{		
+		
+		theme: "theme2",
+		title:{
+			text: "Total Payout"
+		},		
+		data: [
+		{       
+			type: "pie",
+			showInLegend: true,
+			toolTipContent: "{y} - #percent %",
+			yValueFormatString: "#,##0,,.## Million",
+			legendText: "{indexLabel}",
+			dataPoints: [
+				{  y: 4181563, indexLabel: "PlayStation 3" },
+				{  y: 2175498, indexLabel: "Wii" },
+				{  y: 3125844, indexLabel: "Xbox 360" },
+				{  y: 1176121, indexLabel: "Nintendo DS"},
+				{  y: 1727161, indexLabel: "PSP" },
+				{  y: 4303364, indexLabel: "Nintendo 3DS"},
+				{  y: 1717786, indexLabel: "PS Vita"}
+			]
+		}
+		]
+	});
+	chart.render();
 }
 
 
