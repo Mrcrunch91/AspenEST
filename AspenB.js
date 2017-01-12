@@ -14,9 +14,16 @@ loan_time["72"] = 72;
 
 var total_Principal = 0;
 var total_Interest = 0; 
+var theCompleteCost = 0;
 
 var theTrademark = ("&copy; " + " " + theDate.getFullYear() + " Aspen Corp. All Rights Reserved.");
 document.getElementById("bottomTrademark").innerHTML = theTrademark;
+
+var loan = document.getElementById("loan").value;
+var d_pay = document.getElementById("downpayment").value;
+var tradeIn = document.getElementById("tradeIn").value;
+var rebates = document.getElementById("rebates").value;
+var interest_Rate = document.getElementById("interestRate").value;
 
 //Main function to begin generating data form user input.
 function calc(){	
@@ -26,11 +33,7 @@ while(document.getElementById("createTable")){
 	center.removeChild(document.getElementById("createTable"));	
 }
 
-var loan = document.getElementById("loan").value;
-var d_pay = document.getElementById("downpayment").value;
-var tradeIn = document.getElementById("tradeIn").value;
-var rebates = document.getElementById("rebates").value;
-var interest_Rate = document.getElementById("interestRate").value;
+
 
 loan = parseFloat(loan);
 d_pay = parseFloat(d_pay);
@@ -48,13 +51,18 @@ var doos = loanLen();
 var monthPay = monthlyPayment(total_Principal,doos,interest_Rate);
 paidTotalInterest(monthPay,doos);
 
-var theCompleteCost = loan + total_Interest + d_pay + tradeIn + rebates;
+
 
 /*WORKING HERE - GET THEM TO ADD UP*/
+theCompleteCost = parseFloat(loan + total_Interest + d_pay + tradeIn + rebates);
 alert(theCompleteCost);
+
+
 
 getTable(monthPay,doos);
 }
+
+ 
 
 //Gets loan duration from user
 function loanLen(){	
@@ -97,7 +105,7 @@ function monthlyPayment(total_Principal,doos,interest_Rate){
 
 //Calculates total interest paid over the course of the loan.
 function paidTotalInterest(monthPay,doos){
-	total_Interest = ((monthPay*doos) - total_Principal).toFixed(2);	
+	total_Interest =parseInt(((monthPay*doos) - total_Principal).toFixed(2));	
 }
 
 //Builds table for data to be displayed. 
@@ -142,7 +150,7 @@ function getTable(monthPay,doos){
 	}
 
 	cell0.innerHTML = "$ " + total_Principal.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
-	cell1.innerHTML = "$ " + total_Interest.replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+	cell1.innerHTML = "$ " + total_Interest.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
 	cell2.innerHTML = "$" + monthPay.replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + "/" + doos + " payments";
 
 	bamGraph();

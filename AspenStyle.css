@@ -126,9 +126,9 @@ form {
  	background-color: white; 	
  }
 
-#createGraph{
-	top-margin:100px;
-	height:350px;width:90%;
+#createGraph{	
+	height:350px;
+	width:90%;
 	margin-left:5%;
 }
 
