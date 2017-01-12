@@ -31,6 +31,7 @@ function calc(){
 //Clears table for new data.
 while(document.getElementById("createTable")){		
 	center.removeChild(document.getElementById("createTable"));	
+	center.removeChild(document.getElementById("createGraph"));	
 }
 
 loan = document.getElementById("loan").value;
@@ -55,6 +56,7 @@ getfinalPrincipal(loan,d_pay,tradeIn,rebates);
 
 var doos = loanLen();
 var monthPay = monthlyPayment(total_Principal,doos,interest_Rate);
+
 paidTotalInterest(monthPay,doos);
 
 
@@ -63,7 +65,7 @@ paidTotalInterest(monthPay,doos);
 theCompleteCost = parseFloat(loan + total_Interest + d_pay + tradeIn + rebates);
 
 getTable(monthPay,doos);
-//bamGraph();
+bamGraph();
 }
 
  
@@ -115,14 +117,11 @@ function paidTotalInterest(monthPay,doos){
 //Builds table for data to be displayed. 
 function getTable(monthPay,doos){	
 
-	//creates a table element and added it to the div "first" in the html
+	//creates a table element and added it to the div "center" in the html
 	var createTable = document.createElement("table");
 	createTable.id = "createTable";
 	center.appendChild(createTable);
-
-	var createGraph = document.createElement("div");
-	createGraph.id = "createGraph";
-	center.appendChild(createGraph);
+	
 
 	var resultHead = createTable.createTHead();
 	var headRow = resultHead.insertRow();
@@ -166,6 +165,11 @@ function clearTable(){
 }
 
 function bamGraph () {
+
+	var createGraph = document.createElement("div");
+	createGraph.id = "createGraph";
+	center.appendChild(createGraph);
+
 	var chart = new CanvasJS.Chart("createGraph",
 	{
 		title:{
