@@ -98,6 +98,7 @@ input[type = "radio"]{
 	text-align: center;
 	border-spacing: 0;			
 	border: 2px solid black;
+	position:static;
 }
 
 form {

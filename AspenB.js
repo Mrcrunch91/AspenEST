@@ -19,11 +19,11 @@ var theCompleteCost = 0;
 var theTrademark = ("&copy; " + " " + theDate.getFullYear() + " Aspen Corp. All Rights Reserved.");
 document.getElementById("bottomTrademark").innerHTML = theTrademark;
 
-var loan = document.getElementById("loan").value;
-var d_pay = document.getElementById("downpayment").value;
-var tradeIn = document.getElementById("tradeIn").value;
-var rebates = document.getElementById("rebates").value;
-var interest_Rate = document.getElementById("interestRate").value;
+var loan = 0;
+var d_pay = 0;
+var tradeIn = 0;
+var rebates = 0;
+var interest_Rate = 0;
 
 //Main function to begin generating data form user input.
 function calc(){	
@@ -32,6 +32,12 @@ function calc(){
 while(document.getElementById("createTable")){		
 	center.removeChild(document.getElementById("createTable"));	
 }
+
+loan = document.getElementById("loan").value;
+d_pay = document.getElementById("downpayment").value;
+tradeIn = document.getElementById("tradeIn").value;
+rebates = document.getElementById("rebates").value;
+interest_Rate = document.getElementById("interestRate").value;
 
 
 
@@ -55,11 +61,9 @@ paidTotalInterest(monthPay,doos);
 
 /*WORKING HERE - GET THEM TO ADD UP*/
 theCompleteCost = parseFloat(loan + total_Interest + d_pay + tradeIn + rebates);
-alert(theCompleteCost);
-
-
 
 getTable(monthPay,doos);
+//bamGraph();
 }
 
  
@@ -152,9 +156,6 @@ function getTable(monthPay,doos){
 	cell0.innerHTML = "$ " + total_Principal.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
 	cell1.innerHTML = "$ " + total_Interest.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
 	cell2.innerHTML = "$" + monthPay.replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + "/" + doos + " payments";
-
-	bamGraph();
-
    
 }
 
@@ -182,17 +183,17 @@ function bamGraph () {
 		{        
 			type: "pie",       
 			indexLabelFontFamily: "Garamond",       
-			indexLabelFontSize: 20,
+			indexLabelFontSize: 14,
 			indexLabel: "{label} {y}%",
 			startAngle:-20,      
 			showInLegend: true,
 			toolTipContent:"{legendText} {y}%",
 			dataPoints: [
-				{  y: 83.24, legendText:"Google", label: "Google" },
-				{  y: 8.16, legendText:"Yahoo!", label: "Yahoo!" },
-				{  y: 4.67, legendText:"Bing", label: "Bing" },
-				{  y: 1.67, legendText:"Baidu" , label: "Baidu"},       
-				{  y: 0.98, legendText:"Others" , label: "Others"}
+				{  y: ((loan/theCompleteCost)*100).toFixed(2), legendText:"Principal", label: "Principal" },
+				{  y: ((total_Interest/theCompleteCost)*100).toFixed(2), legendText:"Interest", label: "Interest" },
+				{  y: ((d_pay/theCompleteCost)*100).toFixed(2), legendText:"Down-Payment", label: "Down-Payment" },
+				{  y: ((tradeIn/theCompleteCost)*100).toFixed(2), legendText:"Trade-In", label: "Trade-In" },
+				{  y: ((rebates/theCompleteCost)*100).toFixed(2), legendText:"Rebate", label: "Rebates" }
 			]
 		}
 		]
