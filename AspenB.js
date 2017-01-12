@@ -48,6 +48,11 @@ var doos = loanLen();
 var monthPay = monthlyPayment(total_Principal,doos,interest_Rate);
 paidTotalInterest(monthPay,doos);
 
+var theCompleteCost = loan + total_Interest + d_pay + tradeIn + rebates;
+
+/*WORKING HERE - GET THEM TO ADD UP*/
+alert(theCompleteCost);
+
 getTable(monthPay,doos);
 }
 
@@ -103,6 +108,10 @@ function getTable(monthPay,doos){
 	createTable.id = "createTable";
 	center.appendChild(createTable);
 
+	var createGraph = document.createElement("div");
+	createGraph.id = "createGraph";
+	center.appendChild(createGraph);
+
 	var resultHead = createTable.createTHead();
 	var headRow = resultHead.insertRow();
 
@@ -135,43 +144,55 @@ function getTable(monthPay,doos){
 	cell0.innerHTML = "$ " + total_Principal.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
 	cell1.innerHTML = "$ " + total_Interest.replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
 	cell2.innerHTML = "$" + monthPay.replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + "/" + doos + " payments";
+
+	bamGraph();
+
+   
 }
 
 //Removes the table upon screen refresh or data reset. 
 function clearTable(){		
-	center.removeChild(document.getElementById("getGraph"));
+	center.removeChild(document.getElementById("createGraph"));
+	center.removeChild(document.getElementById("createTable"));
 }
 
-
-window.onload = function () {
-	var chart = new CanvasJS.Chart("createTable",
-	{		
-		
-		theme: "theme2",
+function bamGraph () {
+	var chart = new CanvasJS.Chart("createGraph",
+	{
 		title:{
-			text: "Total Payout"
-		},		
+			text: "Total Cost Breakdown"
+		},
+                animationEnabled: true,
+		legend:{
+			verticalAlign: "center",
+			horizontalAlign: "left",
+			fontSize: 20,
+			fontFamily: "Helvetica"        
+		},
+		theme: "theme2",
 		data: [
-		{       
-			type: "pie",
+		{        
+			type: "pie",       
+			indexLabelFontFamily: "Garamond",       
+			indexLabelFontSize: 20,
+			indexLabel: "{label} {y}%",
+			startAngle:-20,      
 			showInLegend: true,
-			toolTipContent: "{y} - #percent %",
-			yValueFormatString: "#,##0,,.## Million",
-			legendText: "{indexLabel}",
+			toolTipContent:"{legendText} {y}%",
 			dataPoints: [
-				{  y: 4181563, indexLabel: "PlayStation 3" },
-				{  y: 2175498, indexLabel: "Wii" },
-				{  y: 3125844, indexLabel: "Xbox 360" },
-				{  y: 1176121, indexLabel: "Nintendo DS"},
-				{  y: 1727161, indexLabel: "PSP" },
-				{  y: 4303364, indexLabel: "Nintendo 3DS"},
-				{  y: 1717786, indexLabel: "PS Vita"}
+				{  y: 83.24, legendText:"Google", label: "Google" },
+				{  y: 8.16, legendText:"Yahoo!", label: "Yahoo!" },
+				{  y: 4.67, legendText:"Bing", label: "Bing" },
+				{  y: 1.67, legendText:"Baidu" , label: "Baidu"},       
+				{  y: 0.98, legendText:"Others" , label: "Others"}
 			]
 		}
 		]
 	});
 	chart.render();
 }
+  	
 
+     
 
-
+		
