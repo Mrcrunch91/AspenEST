@@ -53,12 +53,13 @@ td,th{
 
 
 #theFooter{				
-	position:absolute;
+	position:relative;
 	bottom:0px;	
 	width:100%;
 	margin-left: 42.5%;	
 	height:5px;
 	clear:both;	
+	margin-top: 105px;
 }
 
 #theFooter a{				
@@ -135,7 +136,7 @@ form {
 }
 
 main{		
-	margin-bottom: 100px;
+	
  }
 
 
