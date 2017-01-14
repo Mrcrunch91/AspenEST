@@ -166,7 +166,7 @@ function clearTable(){
 
 function bamGraph () {
 
-	var createGraph = document.createElement("div");
+	var createGraph =document.createElement("div") ;
 	createGraph.id = "createGraph";
 	center.appendChild(createGraph);
 
