@@ -58,8 +58,7 @@ td,th{
 	width:100%;
 	margin-left: 42.5%;	
 	height:5px;
-	clear:both;	
-	margin-top: 85px;
+	clear:both;		
 }
 
 #theFooter a{				
@@ -101,7 +100,7 @@ input[type = "radio"]{
 	text-align: center;
 	border-spacing: 0;			
 	border: 2px solid black;
-	position:static;
+	position:relative;
 }
 
 form {
@@ -110,7 +109,7 @@ form {
  
  #center{
  	width:50%; 
- 	position:center;	
+ 	position:relative;	
  	margin-left: auto;
  	margin-right: auto; 
  	border: 4px solid #80aaff;
@@ -133,6 +132,7 @@ form {
 	height:350px;
 	width:90%;
 	margin-left:5%;	
+	position:relative;	
 }
 
 main{		
