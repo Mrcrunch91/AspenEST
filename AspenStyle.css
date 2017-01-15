@@ -53,17 +53,17 @@ td,th{
 
 
 #theFooter{				
-	position:relative;
+	position:absolute;
 	bottom:0px;	
 	width:100%;
 	margin-left: 42.5%;	
 	height:5px;
 	clear:both;	
-	margin-top: 105px;
+	margin-top: 85px;
 }
 
 #theFooter a{				
-	color:green;
+	color:red;
 }
 
 input[type = "submit"]{
